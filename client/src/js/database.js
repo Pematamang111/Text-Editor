@@ -39,13 +39,13 @@ export const getDb = async () => {
   console.error('getDb not implemented');
 
  // Create a connection to the database database and version we want to use.
- const todosDb = await openDB('todos', 1);
+ const todosDb = await openDB('jate', 1);
 
  // Create a new transaction and specify the database and data privileges.
- const tx = todosDb.transaction('todos', 'readonly');
+ const tx = todosDb.transaction('jate', 'readonly');
 
  // Open up the desired object store.
- const store = tx.objectStore('todos');
+ const store = tx.objectStore('jate');
 
  // Use the .getAll() method to get all data in the database.
  const request = store.getAll();
