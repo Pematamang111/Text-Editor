@@ -53,7 +53,12 @@ export const getDb = async () => {
   // Get confirmation of the request.
  const result = await request;
  console.log('result.value', result);
- return result;
+
+ if (result.length === 0) {
+  return null;
+ }
+
+ return result[0].content;
 };
 
 
